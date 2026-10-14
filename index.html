@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gcuma ❤️ Masinama</title>
+<link rel="stylesheet" href="style.css" type="text/css">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="hearts-bg" id="hearts"></div>
+
+<div class="container">
+
+  <!-- Music Playe2 -->
+  <div class="music-player">
+    <span>🎵 Our Song</span>
+    <button id="playBtn" onclick="toggleMusic()">▶️</button>
+    <span class="hint">Play me</span>
+  </div>
+  <!-- Music Player2 -->
+  <div class="music-player">
+    <span>🎵 Our Song</span>
+    <button id="playBtn2" onclick="toggleMusic2()">▶️</button>
+    <span class="hint">Play me</span>
+  </div>
+
+  <audio id="loveSong" loop>
+    <source src="New one/Alex Warren - Ordinary (Official Video)_u2ah9tWTkmk.mp3" type="audio/mpeg">
+  </audio>
+
+  <audio id="loveSong2" loop>
+    <source src="New one/That Part.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Main Card -->
+  <div class="card">
+    <div class="big-heart">❤️</div>
+    <h1>My Yeyethu</h1>
+    <div class="clans">MaSinaMa, Mamjoli • My Short Queen</div>
+
+    <!-- PHOTO PLACEHOLDERS -->
+    <div class="photos">
+      <div class="polaroid">
+        <img src="New one/20260408_154117.jpg" alt="Us 1" onerror="this.src='https://via.placeholder.com/180x180/ffc2d1/ffffff?text=Photo+1'">
+        <div class="caption">You & Me</div>
+      </div>
+      <div class="polaroid">
+        <img src="New one/20260207_140737.jpg" alt="Us 2" onerror="this.src='https://via.placeholder.com/180x180/ffc2d1/ffffff?text=Photo+2'">
+        <div class="caption">My Favourite</div>
+      </div>
+      <div class="polaroid">
+        <img src="New one/IMG-20260901-WA0196.jpg" alt="Us 3" onerror="this.src='https://via.placeholder.com/180x180/ffc2d1/ffffff?text=Photo+3'">
+        <div class="caption">Forever</div>
+      </div>
+    </div>
+
+    <div class="letter">
+      <p>This Is For You <b>Mamjoli</b>,</p>
+      <p>Every time I look at our photos, I remember why I am so proud. As u <b>Gcuma</b> — "that man found his home in you."</p>
+      <p>It is Ironically, sthandwa sami, but you are the tallest thing in my life. You stand above everything. When you look up at me, I feel like I can protect the whole world for you.</p>
+      <p>Thank you for your laugh, your love, your respect, your everything.</p>
+      <p>I love you endlessly.</p>
+    </div>
+
+    <div class="signature">Yours, Ndzabela ❤️</div>
+  </div>
+</div>
+
+<script>
+  const heartsContainer = document.getElementById('hearts');
+  for(let i=0; i<25; i++){
+    let s = document.createElement('span');
+    s.innerHTML = '❤️';
+    s.style.left = Math.random()*100 + 'vw';
+    s.style.animationDuration = (5 + Math.random()*10) + 's';
+    s.style.fontSize = (12 + Math.random()*20) + 'px';
+    s.style.animationDelay = Math.random()*5 + 's';
+    heartsContainer.appendChild(s);
+  }
+
+  const song = document.getElementById('loveSong');
+  const btn = document.getElementById('playBtn');
+
+  const song2 = document.getElementById('loveSong2');
+  const btn2 = document.getElementById('playBtn2');
+
+  let playing = false;
+  let playing2 = false;
+  function toggleMusic(){
+    if(!playing){
+      song.play();
+      song2.pause();
+      btn.innerHTML = '⏸️';
+      btn2.innerHTML = '▶️';
+      playing = true;
+      playing2 = false;
+    } else {
+      song.pause();
+      btn.innerHTML = '▶️';
+      playing = false;
+    }
+  }
+
+  function toggleMusic2(){
+    if(!playing2){
+      song2.play();
+      song.pause();
+      btn2.innerHTML = '⏸️';
+      btn.innerHTML = '▶️';
+      playing2 = true;
+      playing = false;
+    } else {
+      song2.pause();
+      btn2.innerHTML = '▶️';
+      playing2 = false;
+    }
+  }
+</script>
+
+</body>
+</html>
